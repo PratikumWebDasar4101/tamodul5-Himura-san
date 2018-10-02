@@ -135,6 +135,16 @@
                 <br><br>
                 Jenis Kelamin : <input type="radio" name="jk"  value="Laki-laki" required> Laki-laki <input type="radio" name="jk"  value="Perempuan" required> Perempuan 
                 <br><br>
+                Fakultas
+                <select name="fakultas" required>
+                    <option value="FTE">FTE</option>
+                    <option value="FRI">FRI</option>
+                    <option value="FIF">FIF</option>
+                    <option value="FEB">FEB</option>
+                    <option value="FKB">FKB</option>
+                    <option value="FIK">FIK</option>
+                    <option value="FIT">FIT</option>
+                </select>
                 Program Studi 
                 <select name="prodi" required>
                     <option value="D3 Teknik Komputer">D3 Teknik Komputer</option>
@@ -145,16 +155,6 @@
                     <option value="D3 Manajemen Informatika">D3 Manajemen Informatika</option>
                     <option value="D3 Komputerisasi Komputansi">D3 Komputerisasi Komputansi</option>
                     <option value="D4 Sistem Multimedia">D4 Sistem Multimedia</option>
-                </select>
-                Fakultas
-                <select name="fakultas" required>
-                    <option value="FTE">FTE</option>
-                    <option value="FRI">FRI</option>
-                    <option value="FIF">FIF</option>
-                    <option value="FEB">FEB</option>
-                    <option value="FKB">FKB</option>
-                    <option value="FIK">FIK</option>
-                    <option value="FIT">FIT</option>
                 </select>            
                 Hobi <br>
                 <input type="checkbox" name="hobi[]" value="Football">Football 
