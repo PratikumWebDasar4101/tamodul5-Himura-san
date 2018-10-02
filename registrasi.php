@@ -136,7 +136,8 @@
                 Jenis Kelamin : <input type="radio" name="jk"  value="Laki-laki" required> Laki-laki <input type="radio" name="jk"  value="Perempuan" required> Perempuan 
                 <br><br>
                 Fakultas
-                <select name="fakultas" required>
+                <select name="fakultas" onchange="changeFakultas(this.value)" required>
+                    <option disabled selected>--- Select One ---</option>
                     <option value="FTE">FTE</option>
                     <option value="FRI">FRI</option>
                     <option value="FIF">FIF</option>
@@ -146,16 +147,17 @@
                     <option value="FIT">FIT</option>
                 </select>
                 Program Studi 
-                <select name="prodi" required>
-                    <option value="D3 Teknik Komputer">D3 Teknik Komputer</option>
+                <select name="prodi" id="prodi" required>
+                    <option disabled selected>--- Pilih Fakultas Dahulu ---</option>
+                    <!-- <option value="D3 Teknik Komputer">D3 Teknik Komputer</option>
                     <option value="D3 Teknik Informatika">D3 Teknik Informatika</option>
                     <option value="D3 Teknik Telekomunikasi">D3 Teknik Telekomunikasi</option>
                     <option value="D3 Manajemen Pemasaran">D3 Manajemen Pemasaran</option>
                     <option value="D3 Perhotelan">D3 Perhotelan</option>
                     <option value="D3 Manajemen Informatika">D3 Manajemen Informatika</option>
                     <option value="D3 Komputerisasi Komputansi">D3 Komputerisasi Komputansi</option>
-                    <option value="D4 Sistem Multimedia">D4 Sistem Multimedia</option>
-                </select>            
+                    <option value="D4 Sistem Multimedia">D4 Sistem Multimedia</option> -->
+                </select>           
                 Hobi <br>
                 <input type="checkbox" name="hobi[]" value="Football">Football 
                 <input type="checkbox" name="hobi[]" value="Basket">Basket 
@@ -170,3 +172,38 @@
         </div>
     </body>
 </html>
+<script>
+    function changeFakultas(value){
+        if (value == "FIT") {
+            document.getElementById('prodi').innerHTML =
+                "<option value='D3 Teknik Komputer'>D3 Teknik Komputer</option>" +
+                "<option value='D3 Teknik Informatika'>D3 Teknik Informatika</option>" +
+                "<option value='D3 Teknik Telekomunikasi'>D3 Teknik Telekomunikasi</option>" +
+                "<option value='D3 Manajemen Pemasaran'>D3 Manajemen Pemasaran</option>" +
+                "<option value='D3 Perhotelan'>D3 Perhotelan</option>" +
+                "<option value='D3 Manajemen Informatika'>D3 Manajemen Informatika</option>" +
+                "<option value='D3 Komputerisasi Komputansi'>D3 Komputerisasi Komputansi</option>" +
+                "<option value='D4 Sistem Multimedia'>D4 Sistem Multimedia</option>";
+        } else if (value == "FTE"){
+            document.getElementById('prodi').innerHTML =
+                "<option value='S1 Teknik Elektro'>S1 Teknik Elektro</option>" +
+                "<option value='S1 Teknik Telekomunikasi'>S1 Teknik Telekomunikasi</option>" +
+                "<option value='S1 Teknik Fisika'>S1 Teknik Fisika</option>" +
+                "<option value='S1 Sistem Komputer'>S1 Sistem Komputer</option>" +
+                "<option value='S2 Telekomunikasi Elektronik'>S2 Telekomunikasi Elektronik</option>";
+        } else if (value == "FRI"){
+            document.getElementById('prodi').innerHTML =
+                "<option value='S1 Teknik Industri'>S1 Teknik Industri</option>" +
+                "<option value='S1 Sistem Informasi'>S1 Sistem Informasi</option>" +
+                "<option value='S2 Teknik Industri'>S2 Teknik Industri</option>";
+        } else if (value == "FIF"){
+            document.getElementById('prodi').innerHTML =
+                "<option value='S1 Ilmu Komputasi'>S1 Ilmu Komputasi</option>" +
+                "<option value='S1 Informatika'>S1 Informatika</option>" +
+                "<option value='S1 Teknologi Informasi'>S1 Teknologi Informasi</option>" +
+                "<option value='S2 Informatika'>S2 Informatika</option>";
+        } else {
+            document.getElementById('prodi').innerHTML = "<option> -- Pilih Fakultas Lain -- </option>";
+        }
+    };
+</script>
